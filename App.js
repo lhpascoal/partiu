@@ -5,11 +5,11 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons'
-import Estilo from './src/components/estilo'
 import Familia3 from './assets/familia3.png'
 import Familia2 from './assets/familia2.png'
-import FeedScreen from './src/components/feed'
-import MapaScreen from './src/components/mapaSreen'
+import FeedStack from './src/components/feedStack'
+import SettingsScreen from './src/components/sobreScreen'
+import MapaStack from './src/components/mapaStack'
 
 function DetailsScreen() {
   return (
@@ -27,59 +27,6 @@ function DetailsScreen() {
   );
 }
 
-
-function SettingsScreen({ navigation }) {
-  const texto = 'Esta pagina está em fase de desenvolvimento'.toUpperCase()
-  const texto2 = 'Clique abaixo para saber mais sobre nós'
-  const cliqueaqui = 'clique aqui'.toUpperCase()
-  return (
-    <View style={Estilo.viewContainer}>
-      <Text style={[Estilo.textCentral, {textAlign: 'center', fontSize:36, marginBottom: 20}]}>{texto}</Text>
-      <Text style={Estilo.textCentral, {textAlign: 'center', fontSize:30, color:'black', padding: 10}}>{texto2}</Text>
-      <TouchableOpacity
-        style={Estilo.buttonContainer}
-        title=""
-        onPress={() => navigation.navigate('Minha familía')}
-      >
-        
-        <Text style={Estilo.buttonText}>{cliqueaqui}</Text>
-      </TouchableOpacity>
-    </View>
-  );
-}
-
-const FeedStack = createStackNavigator();
-
-function FeedStackScreen() {
-  return (
-    <FeedStack.Navigator>
-      <FeedStack.Screen 
-      name='Feed' 
-      component={FeedScreen} 
-      options={(route) => ({ title: route.name, headerStyle: 
-        {
-          backgroundColor:'#b2ebf2'
-        }, 
-          headerTintColor: '#fff',
-          headerTitleStyle: {
-            fontWeight: 'bold',
-            fontSize: 24,
-            alignSelf: 'center',
-            marginEnd: 45,
-          },
-          headerLeft: () => (
-            <IconButton
-              onPress={() => alert('Essa funcionalidade ainda será implentada')}
-              color="#00cc00"
-              icon="flower"
-              color="white"
-            />
-          ),
-        })}
-       />
-    </FeedStack.Navigator>
-  );
-}
 
 const SettingsStack = createStackNavigator();
 
@@ -130,37 +77,6 @@ function SettingsStackScreen() {
   );
 }
 
-function MapaStackScreen() {
-  return (
-    <SettingsStack.Navigator
-    >
-      <SettingsStack.Screen 
-        name="Mapa"
-        component={MapaScreen} 
-        options={({ route }) => ({ title: route.name, headerStyle: 
-          {
-            backgroundColor:'#b2ebf2'
-          }, 
-            headerTintColor: '#fff',
-            headerTitleStyle: {
-              fontWeight: 'bold',
-              fontSize: 24,
-              alignSelf: 'center',
-              marginEnd: 55,
-            },
-            headerLeft: () => (
-              <IconButton
-                onPress={() => alert('Essa funcionalidade ainda será implentada')}
-                color="#00cc00"
-                icon="flower"
-                color="white"
-              />
-            ),
-          })}
-      />  
-    </SettingsStack.Navigator>
-  );
-}
 const Tab = createBottomTabNavigator();
 
 
@@ -203,8 +119,8 @@ export default function App() {
               }  
           }} initialRouteName="Feed"
           >
-        <Tab.Screen name="Feed" component={FeedStackScreen} />
-        <Tab.Screen name="Mapa" component={MapaStackScreen}   />
+        <Tab.Screen name="Feed" component={FeedStack} />
+        <Tab.Screen name="Mapa" component={MapaStack}   />
         <Tab.Screen name="Sobre" component={SettingsStackScreen} />
       </Tab.Navigator>
     </NavigationContainer>
