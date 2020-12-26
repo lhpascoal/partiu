@@ -1,26 +1,29 @@
 import * as React from 'react';
-import { TouchableOpacity, Text, View, Dimensions } from 'react-native';
+import { TouchableOpacity, Text, View, Dimensions, ImageBackground } from 'react-native';
+import { IconButton } from 'react-native-paper';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import MapView from 'react-native-maps';
+import MapView, { Callout } from 'react-native-maps';
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import { Marker } from 'react-native-maps';
 import Estilo from './src/components/estilo'
-
+import Familia3 from './assets/familia3.png'
+import Familia2 from './assets/familia2.png'
+import FeedScreen from './src/components/feed'
 
 function DetailsScreen() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor:'black' }}>
-      <Text style={{fontSize: 50, color: '#fff'}}>COMI SEU CU</Text>
-    </View>
-  );
-}
-
-function HomeScreen({ navigation }) {
-  return (
-    <View style={Estilo.viewContainer}>
-      <Text style={Estilo.textCentral}>PARTIU</Text>
+      <ImageBackground
+        style={{ width: Dimensions.get('window').width, height: Dimensions.get('window').height/2, flex:1}}
+        source={Familia2}
+      />
+      <ImageBackground
+        style={{ width: Dimensions.get('window').width, height: Dimensions.get('window').height/2, flex:1}}
+        source={Familia3}
+        
+      />
     </View>
   );
 }
@@ -30,50 +33,55 @@ function MapaScreen() {
     <View style={{ flex: 1, backgroundColor: '#fff', alignItems: 'center', justifyContent: 'center',}}>
       <MapView 
         initialRegion={{
-          latitude: -22.848861895879576,
-          longitude: -43.32558296691632,
+          latitude: -22.83130083482748, 
+          longitude: -43.316099202401126,
           latitudeDelta: 0.0922,
           longitudeDelta: 0.0421,
         }}
         style={{ width: Dimensions.get('window').width, height: Dimensions.get('window').height,}} >
+        <Callout>
           <Marker
             coordinate={{
-              latitude: -22.848861895879576,
-              longitude: -43.32558296691632,}}
-            title={'Casa do papai'}
-            description={'Vem me dar'} 
+              latitude: -22.83130083482748, 
+              longitude: -43.316099202401126,}}
+            title={'Pachecao Digital'}
+            description={'Vista Alegre, Rio de Janeiro - RJ, 21230-351'} 
           />
+         </Callout>
         </MapView>
+     
     </View>
   );
 }
-
 function SettingsScreen({ navigation }) {
-  const texto = 'Espaço destinado para comer cu de curioso'.toUpperCase()
-  const cliqueaqui = 'Clique aqui para saber mais'.toUpperCase()
+  const texto = 'Esta pagina está em fase de desenvolvimento'.toUpperCase()
+  const texto2 = 'Clique abaixo para saber mais sobre nós'
+  const cliqueaqui = 'clique aqui'.toUpperCase()
   return (
     <View style={Estilo.viewContainer}>
-      <Text style={[Estilo.textCentral, {textAlign: 'center', fontSize:36}]}>{texto}</Text>
+      <Text style={[Estilo.textCentral, {textAlign: 'center', fontSize:36, marginBottom: 20}]}>{texto}</Text>
+      <Text style={Estilo.textCentral, {textAlign: 'center', fontSize:30, color:'black', padding: 10}}>{texto2}</Text>
       <TouchableOpacity
         style={Estilo.buttonContainer}
-        title="Go to AI DANADO"
-        onPress={() => navigation.navigate('AI DANADO')}
+        title=""
+        onPress={() => navigation.navigate('Minha familía')}
       >
+        
         <Text style={Estilo.buttonText}>{cliqueaqui}</Text>
       </TouchableOpacity>
     </View>
   );
 }
 
-const HomeStack = createStackNavigator();
+const FeedStack = createStackNavigator();
 
-function HomeStackScreen() {
+function FeedStackScreen() {
   return (
-    <HomeStack.Navigator>
-      <HomeStack.Screen 
-      name='Home' 
-      component={HomeScreen} 
-      options={({ route }) => ({ title: 'Eai ?', headerStyle: 
+    <FeedStack.Navigator>
+      <FeedStack.Screen 
+      name='Feed' 
+      component={FeedScreen} 
+      options={(route) => ({ title: route.name, headerStyle: 
         {
           backgroundColor:'#b2ebf2'
         }, 
@@ -82,9 +90,19 @@ function HomeStackScreen() {
             fontWeight: 'bold',
             fontSize: 24,
             alignSelf: 'center',
-          }})}
+            marginEnd: 45,
+          },
+          headerLeft: () => (
+            <IconButton
+              onPress={() => alert('Essa funcionalidade ainda será implentada')}
+              color="#00cc00"
+              icon="flower"
+              color="white"
+            />
+          ),
+        })}
        />
-    </HomeStack.Navigator>
+    </FeedStack.Navigator>
   );
 }
 
@@ -94,7 +112,7 @@ function SettingsStackScreen() {
   return (
     <SettingsStack.Navigator>
       <SettingsStack.Screen 
-      name="A PAGINA DO CU" 
+      name="Sobre" 
       component={SettingsScreen}
       options={({ route }) => ({ title: route.name, headerStyle: 
         {
@@ -105,10 +123,20 @@ function SettingsStackScreen() {
             fontWeight: 'bold',
             fontSize: 24,
             alignSelf: 'center',
-          }})}
+            marginEnd: 55
+          },
+          headerLeft: () => (
+            <IconButton
+              onPress={() => alert('Essa funcionalidade ainda será implentada')}
+              color="#00cc00"
+              icon="flower"
+              color="white"
+            />
+          ),
+        })}
       />
       <SettingsStack.Screen 
-      name="AI DANADO" 
+      name="Minha familía" 
       component={DetailsScreen} 
       options={({ route }) => ({ title: route.name, headerStyle: 
         {
@@ -119,18 +147,20 @@ function SettingsStackScreen() {
             fontWeight: 'bold',
             fontSize: 24,
             alignSelf: 'center',
-            marginEnd: 50
-          }})}
+            marginEnd: 55
+          },
+        })}
       />
     </SettingsStack.Navigator>
   );
 }
+
 function MapaStackScreen() {
   return (
     <SettingsStack.Navigator
     >
       <SettingsStack.Screen 
-        name="Mapa" 
+        name="Mapa"
         component={MapaScreen} 
         options={({ route }) => ({ title: route.name, headerStyle: 
           {
@@ -141,22 +171,22 @@ function MapaStackScreen() {
               fontWeight: 'bold',
               fontSize: 24,
               alignSelf: 'center',
-            }})}
+              marginEnd: 55,
+            },
+            headerLeft: () => (
+              <IconButton
+                onPress={() => alert('Essa funcionalidade ainda será implentada')}
+                color="#00cc00"
+                icon="flower"
+                color="white"
+              />
+            ),
+          })}
       />  
     </SettingsStack.Navigator>
   );
 }
-
 const Tab = createBottomTabNavigator();
-
-
-
-
-
-
-
-
-
 
 
 export default function App() {
@@ -168,7 +198,7 @@ export default function App() {
                   let iconName
 
                   switch (route.name) {
-                      case 'Partiu':
+                      case 'Feed':
                           iconName = focused
                               ? 'home-outline'
                               : 'home-outline'
@@ -178,10 +208,10 @@ export default function App() {
                               ? 'map-outline'
                               : 'map-outline'
                           break
-                      case 'Cu':
+                      case 'Sobre':
                           iconName = focused
-                              ? 'settings-outline'
-                              : 'settings-outline'
+                              ? 'heart-outline'
+                              : 'heart-outline'
                           break
                   }
 
@@ -196,12 +226,11 @@ export default function App() {
               style: {
                 backgroundColor: '#b2ebf2'
               }  
-          }} initialRouteName="Partiu"
-            >
-        <Tab.Screen name="Partiu" component={HomeStackScreen} />
-        <Tab.Screen name="Mapa" component={MapaStackScreen} 
-        />
-        <Tab.Screen name="Cu" component={SettingsStackScreen} />
+          }} initialRouteName="Feed"
+          >
+        <Tab.Screen name="Feed" component={FeedStackScreen} />
+        <Tab.Screen name="Mapa" component={MapaStackScreen}   />
+        <Tab.Screen name="Sobre" component={SettingsStackScreen} />
       </Tab.Navigator>
     </NavigationContainer>
   );

@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet, Dimensions } from 'react-native'
 
  
 const styles = StyleSheet.create({
@@ -26,7 +26,27 @@ const styles = StyleSheet.create({
             justifyContent: 'center', 
             marginVertical: 1,
             color: "#fff"
+        },
+        viewRow: {
+            flex: 1,
+            backgroundColor: '#e0f7fa'
+        },
+        imageStyle: {
+            backgroundColor: 'black', 
+            borderRadius: 30, 
+            marginBottom: 20, 
+            marginTop: 20, 
+            width: Dimensions.get('screen').width-20, 
+            justifyContent: 'center',
+            alignContent: 'center',
+            alignSelf: 'center'
+
+        },
+        imageBackgroud: {
+            width: Dimensions.get('screen').width-20, 
+            height: Dimensions.get('screen').width/2,
         }
+        
     })
 
 export default styles;
