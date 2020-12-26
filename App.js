@@ -4,13 +4,12 @@ import { IconButton } from 'react-native-paper';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import MapView, { Callout } from 'react-native-maps';
 import Ionicons from 'react-native-vector-icons/Ionicons'
-import { Marker } from 'react-native-maps';
 import Estilo from './src/components/estilo'
 import Familia3 from './assets/familia3.png'
 import Familia2 from './assets/familia2.png'
 import FeedScreen from './src/components/feed'
+import MapaScreen from './src/components/mapaSreen'
 
 function DetailsScreen() {
   return (
@@ -28,31 +27,7 @@ function DetailsScreen() {
   );
 }
 
-function MapaScreen() {
-  return (
-    <View style={{ flex: 1, backgroundColor: '#fff', alignItems: 'center', justifyContent: 'center',}}>
-      <MapView 
-        initialRegion={{
-          latitude: -22.83130083482748, 
-          longitude: -43.316099202401126,
-          latitudeDelta: 0.0922,
-          longitudeDelta: 0.0421,
-        }}
-        style={{ width: Dimensions.get('window').width, height: Dimensions.get('window').height,}} >
-        <Callout>
-          <Marker
-            coordinate={{
-              latitude: -22.83130083482748, 
-              longitude: -43.316099202401126,}}
-            title={'Pachecao Digital'}
-            description={'Vista Alegre, Rio de Janeiro - RJ, 21230-351'} 
-          />
-         </Callout>
-        </MapView>
-     
-    </View>
-  );
-}
+
 function SettingsScreen({ navigation }) {
   const texto = 'Esta pagina está em fase de desenvolvimento'.toUpperCase()
   const texto2 = 'Clique abaixo para saber mais sobre nós'
