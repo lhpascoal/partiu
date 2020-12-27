@@ -1,9 +1,8 @@
 import React from 'react'
 import { IconButton } from 'react-native-paper';
 import SobreScreen from './sobreScreen'
-import DetailsScreen from './detailsScreen'
+// import DetailsScreen from './detailsScreen'
 import { createStackNavigator } from '@react-navigation/stack'
-
 
 export default props => {
     const SobreStack = createStackNavigator();
@@ -33,7 +32,8 @@ export default props => {
                 ),
                 })}
             />
-            <SobreStack.Screen 
+            
+            {/* <SobreStack.Screen 
             name="Minha familía" 
             component={DetailsScreen} 
             options={({ route }) => ({ title: route.name, headerStyle: 
@@ -48,7 +48,7 @@ export default props => {
                     marginEnd: 55
                 },
                 })}
-            />
+            /> */}
             </SobreStack.Navigator>
         );
 }

@@ -2,6 +2,12 @@ import React from 'react'
 import {TouchableOpacity ,ScrollView, ImageBackground} from 'react-native'
 import Estilo from './estilo'
 import Pachecao from '../../assets/pachecao.digital.png'
+import Olimpo from '../../assets/olimpo_catra.png'
+import Quintapode from '../../assets/quintapode.png'
+import Viashow from '../../assets/viashow_natal.png'
+import Arena from '../../assets/arena.png'
+import Loverio from '../../assets/loverio.png'
+import Educacao from '../../assets/educacao.png'
 
 export default ({navigation}) => {
     return (
@@ -14,7 +20,7 @@ export default ({navigation}) => {
         <ImageBackground
             style={Estilo.imageBackgroud}
             imageStyle={{borderRadius: 30, justifyContent: 'center', alignSelf: 'center', shadowRadius: 30}}
-            source={Pachecao}
+            source={Olimpo}
         ></ImageBackground>
     </TouchableOpacity>
     <TouchableOpacity 
@@ -36,7 +42,7 @@ export default ({navigation}) => {
         <ImageBackground
             style={Estilo.imageBackgroud}
             imageStyle={{borderRadius: 30, justifyContent: 'center', alignSelf: 'center', shadowRadius: 30}}
-            source={Pachecao}
+            source={Arena}
         ></ImageBackground>
     </TouchableOpacity>
     <TouchableOpacity 
@@ -47,7 +53,7 @@ export default ({navigation}) => {
         <ImageBackground
             style={Estilo.imageBackgroud}
             imageStyle={{borderRadius: 30, justifyContent: 'center', alignSelf: 'center', shadowRadius: 30}}
-            source={Pachecao}
+            source={Quintapode}
         ></ImageBackground>
     </TouchableOpacity>
     <TouchableOpacity 
@@ -58,7 +64,18 @@ export default ({navigation}) => {
         <ImageBackground
             style={Estilo.imageBackgroud}
             imageStyle={{borderRadius: 30, justifyContent: 'center', alignSelf: 'center', shadowRadius: 30}}
-            source={Pachecao}
+            source={Viashow}
+        ></ImageBackground>
+    </TouchableOpacity>
+    <TouchableOpacity 
+        name={'MAPA'}
+        style={Estilo.imageStyle}
+        onPress={() => navigation.navigate('Mapa')}
+    >
+        <ImageBackground
+            style={Estilo.imageBackgroud}
+            imageStyle={{borderRadius: 30, justifyContent: 'center', alignSelf: 'center', shadowRadius: 30    }}
+            source={Loverio}
         ></ImageBackground>
     </TouchableOpacity>
     <TouchableOpacity 
@@ -69,18 +86,7 @@ export default ({navigation}) => {
         <ImageBackground
             style={Estilo.imageBackgroud}
             imageStyle={{borderRadius: 30, justifyContent: 'center', alignSelf: 'center', shadowRadius: 30}}
-            source={Pachecao}
-        ></ImageBackground>
-    </TouchableOpacity>
-    <TouchableOpacity 
-        name={'MAPA'}
-        style={Estilo.imageStyle}
-        onPress={() => navigation.navigate('Mapa')}
-    >
-        <ImageBackground
-            style={Estilo.imageBackgroud}
-            imageStyle={{borderRadius: 30, justifyContent: 'center', alignSelf: 'center', shadowRadius: 30}}
-            source={Pachecao}
+            source={Educacao}
         ></ImageBackground>
         </TouchableOpacity>
     </ScrollView>

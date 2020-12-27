@@ -11,7 +11,7 @@ export default () => {
         <MapaStack.Screen 
           name="Mapa"
           component={MapaScreen} 
-          options={({ route }) => ({ title: route.name, headerStyle: 
+          options={({ route }) => ({ title: 'Mapa', headerStyle: 
             {
               backgroundColor:'#b2ebf2'
             }, 
