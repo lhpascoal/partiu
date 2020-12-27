@@ -26,20 +26,20 @@ export default props =>{
                             ? 'home'
                             : 'home-outline'
                         break
-                    case 'Mapa':
+                    case 'Map':
                         iconName = focused
                             ? 'map'
                             : 'map-outline'
                         break
-                    case 'Loja':
+                    case 'Store':
                         iconName = focused
                             ? 'cart'
                             : 'cart-outline'
                         break
-                    case 'Sobre':
+                    case 'Settings':
                         iconName = focused
-                            ? 'heart'
-                            : 'heart-outline'
+                            ? 'settings'
+                            : 'settings-outline'
                         break
                 }
 
@@ -57,9 +57,9 @@ export default props =>{
             }} initialRouteName="Feed" >
 
                 <Tab.Screen name="Feed" component={FeedStack} />
-                <Tab.Screen name="Mapa" component={MapaStack}   />
-                <Tab.Screen name="Loja" component={LojaStack}   />
-                <Tab.Screen name="Sobre" component={SobreStack} />
+                <Tab.Screen name="Map" component={MapaStack}   />
+                <Tab.Screen name="Store" component={LojaStack}   />
+                <Tab.Screen name="Settings" component={SobreStack} />
         </Tab.Navigator>
 
 

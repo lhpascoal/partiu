@@ -8,7 +8,7 @@ export default ({navigation}) => {
   return (
     <FeedStack.Navigator>
       <FeedStack.Screen 
-      name='Loja' 
+      name='Store' 
       component={LojaScreen} 
       options={(route) => ({ title: route.name, headerStyle: 
         {
@@ -16,16 +16,14 @@ export default ({navigation}) => {
         }, 
           headerTintColor: '#fff',
           headerTitleStyle: {
-            fontWeight: 'bold',
-            fontSize: 24,
-            alignSelf: 'center',
-            marginEnd: 45,
+            marginStart: -15,
+            fontSize: 24,  
           },
           headerLeft: () => (
             <IconButton
               onPress={() => alert('Essa funcionalidade ainda será implentada')}
               color="#00cc00"
-              icon="flower"
+              icon="store"
               color="white"
             />
           ),

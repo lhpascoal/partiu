@@ -12,20 +12,19 @@ export default () => {
       component={feedScreen} 
       options={(route) => ({ title: route.name, headerStyle: 
         {
-          backgroundColor:'#6200ee'
+          backgroundColor:'#6200ee',
+
         }, 
           headerTintColor: '#fff',
           headerTitleStyle: {
-            fontWeight: 'bold',
             fontSize: 24,
-            alignSelf: 'center',
-            marginEnd: 45,
+            marginStart: -15,
           },
           headerLeft: () => (
             <IconButton
               onPress={() => alert('Essa funcionalidade ainda será implentada')}
               color="#00cc00"
-              icon="flower"
+              icon="camera"
               color="white"
             />
           ),

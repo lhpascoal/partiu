@@ -10,14 +10,15 @@ const styles = StyleSheet.create({
         },
         textCentral: {
             fontSize: 50, 
-            color: '#000', 
+            color: '#3700b3', 
             textShadowRadius: 25, 
             fontFamily: 'sans-serif'
         },
         buttonContainer: {
             borderRadius: 25, 
             backgroundColor: '#f5f5f5', 
-            height: 30, margin: 15,
+            height: 30, 
+            margin: 15,
             backgroundColor: 'black'
         },
         buttonText: {
@@ -33,9 +34,8 @@ const styles = StyleSheet.create({
         },
         imageStyle: {
             backgroundColor: 'black', 
-            borderRadius: 30, 
-            marginBottom: 20, 
-            marginTop: 20, 
+            borderRadius: 30,  
+            marginTop: 10, 
             width: Dimensions.get('screen').width-20, 
             justifyContent: 'center',
             alignContent: 'center',
