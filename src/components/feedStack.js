@@ -1,6 +1,6 @@
 import React from 'react'
 import { IconButton } from 'react-native-paper';
-import feedScreen from './feedScreen'
+import {feedScreen} from './feedScreen'
 import { createStackNavigator } from '@react-navigation/stack'
 
 export default () => {
@@ -12,7 +12,7 @@ export default () => {
       component={feedScreen} 
       options={(route) => ({ title: route.name, headerStyle: 
         {
-          backgroundColor:'#b2ebf2'
+          backgroundColor:'#6200ee'
         }, 
           headerTintColor: '#fff',
           headerTitleStyle: {

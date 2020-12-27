@@ -11,7 +11,7 @@ export default props => {
             component={LoginScreen} 
             options={({ route }) => ({ title: route.name, headerStyle: 
                 {
-                backgroundColor:'#b2ebf2'
+                backgroundColor:'#6200ee'
                 }, 
                 headerTintColor: '#fff',
                 headerTitleStyle: {

@@ -1,16 +1,20 @@
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createStackNavigator } from '@react-navigation/stack'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import FeedStack from '../components/feedStack'
 import MapaStack from '../components/mapaStack'
 import SobreStack from '../components/sobreStack'
-import LojaStack from '../components/loginStack'
+import LojaStack from '../components/lojaStack'
+import { ScreenContainer } from 'react-native-screens';
 
 export default props =>{
    
-    const Tab = createBottomTabNavigator(); 
+    const Tab = createBottomTabNavigator();
+    const Screen = createStackNavigator(); 
 
     return(
+
         <Tab.Navigator
             screenOptions={({ route }) => ({
             tabBarIcon: ({ focused, color, size }) => {
@@ -19,22 +23,22 @@ export default props =>{
                 switch (route.name) {
                     case 'Feed':
                         iconName = focused
-                            ? 'home-outline'
+                            ? 'home'
                             : 'home-outline'
                         break
                     case 'Mapa':
                         iconName = focused
-                            ? 'map-outline'
+                            ? 'map'
                             : 'map-outline'
                         break
                     case 'Loja':
                         iconName = focused
-                            ? 'skull-outline'
-                            : 'skull-outline'
+                            ? 'cart'
+                            : 'cart-outline'
                         break
                     case 'Sobre':
                         iconName = focused
-                            ? 'heart-outline'
+                            ? 'heart'
                             : 'heart-outline'
                         break
                 }
@@ -44,17 +48,20 @@ export default props =>{
             })}
             tabBarOptions={{
             activeTintColor: 'white',
-            inactiveTintColor: 'black',
+            inactiveTintColor: 'white',
             showLabel: true,
             labelStyle: { fontSize: 10 },
             style: {
-                backgroundColor: '#b2ebf2'
+                backgroundColor: '#6200ee'
             }  
             }} initialRouteName="Feed" >
 
-            <Tab.Screen name="Feed" component={FeedStack} />
-            <Tab.Screen name="Mapa" component={MapaStack}   />
-            <Tab.Screen name="Loja" component={LojaStack}   />
-            <Tab.Screen name="Sobre" component={SobreStack} />
+                <Tab.Screen name="Feed" component={FeedStack} />
+                <Tab.Screen name="Mapa" component={MapaStack}   />
+                <Tab.Screen name="Loja" component={LojaStack}   />
+                <Tab.Screen name="Sobre" component={SobreStack} />
         </Tab.Navigator>
+
+
+
 )}

@@ -3,7 +3,7 @@ import { IconButton } from 'react-native-paper';
 import LojaScreen from './lojaScreen'
 import { createStackNavigator } from '@react-navigation/stack'
 
-export default () => {
+export default ({navigation}) => {
   const FeedStack = createStackNavigator();  
   return (
     <FeedStack.Navigator>
@@ -12,7 +12,7 @@ export default () => {
       component={LojaScreen} 
       options={(route) => ({ title: route.name, headerStyle: 
         {
-          backgroundColor:'#b2ebf2'
+          backgroundColor:'#6200ee'
         }, 
           headerTintColor: '#fff',
           headerTitleStyle: {

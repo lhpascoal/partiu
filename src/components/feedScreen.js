@@ -1,5 +1,5 @@
 import React from 'react'
-import {TouchableOpacity ,ScrollView, ImageBackground} from 'react-native'
+import {TouchableOpacity ,ScrollView, ImageBackground, Text} from 'react-native'
 import Estilo from './estilo'
 import Pachecao from '../../assets/pachecao.digital.png'
 import Olimpo from '../../assets/olimpo_catra.png'
@@ -9,9 +9,9 @@ import Arena from '../../assets/arena.png'
 import Loverio from '../../assets/loverio.png'
 import Educacao from '../../assets/educacao.png'
 
-export default ({navigation}) => {
+export const feedScreen = ({navigation}) => {
     return (
-    <ScrollView>
+    <ScrollView style={{backgroundColor: 'white'}}>
         <TouchableOpacity 
         name={'MAPA'}
         style={Estilo.imageStyle}

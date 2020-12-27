@@ -13,7 +13,7 @@ export default () => {
           component={MapaScreen} 
           options={({ route }) => ({ title: 'Mapa', headerStyle: 
             {
-              backgroundColor:'#b2ebf2'
+              backgroundColor:'#6200ee'
             }, 
               headerTintColor: '#fff',
               headerTitleStyle: {

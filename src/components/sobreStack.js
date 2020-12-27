@@ -13,7 +13,7 @@ export default props => {
             component={SobreScreen}
             options={({ route }) => ({ title: route.name, headerStyle: 
                 {
-                backgroundColor:'#b2ebf2'
+                backgroundColor:'#6200ee'
                 }, 
                 headerTintColor: '#fff',
                 headerTitleStyle: {
@@ -32,7 +32,7 @@ export default props => {
                 ),
                 })}
             />
-            
+
             {/* <SobreStack.Screen 
             name="Minha familía" 
             component={DetailsScreen} 

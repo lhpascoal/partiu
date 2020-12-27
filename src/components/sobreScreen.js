@@ -13,7 +13,7 @@ export default ({ navigation }) => {
         <Text style={Estilo.textCentral, {textAlign: 'center', fontSize:30, color:'black', padding: 10}}>{texto2}</Text>
         <TouchableOpacity
           style={Estilo.buttonContainer}
-          onPress={() => navigation.navigate('Login')}
+          onPress={() => navigation.push('Login')}
         >
           
           <Text style={Estilo.buttonText}>{cliqueaqui}</Text>

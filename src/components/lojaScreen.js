@@ -1,10 +1,11 @@
 import React from 'react'
-import { ScrollView } from 'react-native'
+import { View, Text } from 'react-native'
+import Estilo from './estilo'
 
 export default () => {
     return (
-    <ScrollView>
-
-    </ScrollView>
+    <View style={Estilo.viewContainer}>
+        <Text style={Estilo.textCentral}>Oi</Text>
+    </View>
 );
 }
