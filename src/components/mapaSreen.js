@@ -1,7 +1,10 @@
 import React from 'react'
-import { View, Dimensions } from 'react-native'
+import { View, TextInput } from 'react-native'
+import { IconButton } from 'react-native-paper';
 import MapView, { Callout, Marker } from 'react-native-maps';
 import MapViewDirections from 'react-native-maps-directions';
+import Estilo from './estilo'
+import MapaSearchBar from './mapaSearchBar'
 
 const GetRegion = [
   {  
@@ -73,10 +76,10 @@ const GOOGLE_MAPS_APIKEY = 'AIzaSyAoiCig70cIQGSUJuxwrDj1ZnLdcd2Nvxg';
 
 export default props => {
     return (
-      <View style={{ flex: 1, backgroundColor: '#fff', alignItems: 'center', justifyContent: 'center',}}>
+      <View style={[Estilo.viewContainer]}>
         <MapView 
           initialRegion={GetRegion[0]}
-          style={{ width: Dimensions.get('window').width, height: Dimensions.get('window').height,}} >
+          style={Estilo.mapView} >
             <MapViewDirections
             strokeWidth={4}
             strokeColor="orange" 
@@ -84,13 +87,11 @@ export default props => {
             destination={GetMaker[3]}
             apikey={GOOGLE_MAPS_APIKEY}
             optimizeWaypoints={true}
-          
             />
           <Callout>
             <Marker
               coordinate={GetMaker[x]}
-              title={GetTitle[x]}
-              // description={GetDescription[x]}              
+              title={GetTitle[x]}             
             />
            </Callout>
            <Callout>
@@ -115,7 +116,9 @@ export default props => {
             />
           </Callout>
           </MapView>
-       
+          <View style={Estilo.viewTextInput}>
+            <MapaSearchBar></MapaSearchBar>
+          </View>
       </View>
     );
   }

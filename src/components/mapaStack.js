@@ -11,10 +11,11 @@ export default () => {
         <MapaStack.Screen 
           name="Map"
           component={MapaScreen} 
-          options={({ route }) => ({ title: route.name, headerStyle: 
+          options={({ route }) => ({ title: route.name, 
+            headerStyle: 
             {
-              backgroundColor:'#6200ee'
-            }, 
+              backgroundColor:'#6200ee',
+            },
               headerTintColor: '#fff',
               headerTitleStyle: {
                 fontSize: 24,

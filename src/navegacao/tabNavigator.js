@@ -6,7 +6,7 @@ import FeedStack from '../components/feedStack'
 import MapaStack from '../components/mapaStack'
 import SobreStack from '../components/sobreStack'
 import LojaStack from '../components/lojaStack'
-import { ScreenContainer } from 'react-native-screens';
+
 
 export default props =>{
    
@@ -19,7 +19,7 @@ export default props =>{
             screenOptions={({ route }) => ({
             tabBarIcon: ({ focused, color, size }) => {
                 let iconName
-
+                let teste
                 switch (route.name) {
                     case 'Feed':
                         iconName = focused
@@ -42,13 +42,14 @@ export default props =>{
                             : 'settings-outline'
                         break
                 }
-
                 return <Ionicons name={iconName} size={size} color={color} />;
+
             },
             })}
             tabBarOptions={{
             activeTintColor: 'white',
             inactiveTintColor: 'white',
+            keyboardHidesTabBar: true,
             showLabel: true,
             labelStyle: { fontSize: 10 },
             style: {

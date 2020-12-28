@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
             backgroundColor: '#f5f5f5', 
             height: 30, 
             margin: 15,
-            backgroundColor: 'black'
+            backgroundColor: '#3700b3'
         },
         buttonText: {
             fontSize: 20, 
@@ -45,8 +45,30 @@ const styles = StyleSheet.create({
         imageBackgroud: {
             width: Dimensions.get('screen').width-20, 
             height: Dimensions.get('screen').width/2,
-        }
-        
+        },
+        textInput: {
+            height: 36,
+            padding: 10,
+            marginTop: 20,
+            marginLeft: 10,
+            marginRight: 50,
+            fontSize: 18,
+            borderWidth: 1,
+            borderRadius: 10,
+            borderColor: '#6200ee',
+            backgroundColor: 'white'
+        },
+        viewTextInput: {
+            backgroundColor: 'transparent',
+            position: 'absolute', 
+            top: 0,
+            left: 0,
+            right: 0
+        },
+        mapView:{
+            width: Dimensions.get('window').width, 
+            height: Dimensions.get('window').height
+        } 
     })
 
 export default styles;

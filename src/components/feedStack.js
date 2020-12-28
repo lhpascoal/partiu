@@ -13,7 +13,6 @@ export default () => {
       options={(route) => ({ title: route.name, headerStyle: 
         {
           backgroundColor:'#6200ee',
-
         }, 
           headerTintColor: '#fff',
           headerTitleStyle: {

@@ -15,7 +15,7 @@ export const feedScreen = ({navigation}) => {
         <TouchableOpacity 
         name={'MAPA'}
         style={Estilo.imageStyle}
-        onPress={() => navigation.navigate('Mapa')}
+        onPress={() => navigation.navigate('Map')}
     >
         <ImageBackground
             style={Estilo.imageBackgroud}
@@ -26,7 +26,7 @@ export const feedScreen = ({navigation}) => {
     <TouchableOpacity 
         name={'MAPA'}
         style={Estilo.imageStyle}
-        onPress={() => navigation.navigate('Mapa')}
+        onPress={() => navigation.navigate('Map')}
     >
         <ImageBackground
             style={Estilo.imageBackgroud}
@@ -37,7 +37,7 @@ export const feedScreen = ({navigation}) => {
     <TouchableOpacity 
         name={'MAPA'}
         style={Estilo.imageStyle}
-        onPress={() => navigation.navigate('Mapa')}
+        onPress={() => navigation.navigate('Map')}
     >
         <ImageBackground
             style={Estilo.imageBackgroud}
@@ -48,7 +48,7 @@ export const feedScreen = ({navigation}) => {
     <TouchableOpacity 
         name={'MAPA'}
         style={Estilo.imageStyle}
-        onPress={() => navigation.navigate('Mapa')}
+        onPress={() => navigation.navigate('Map')}
     >
         <ImageBackground
             style={Estilo.imageBackgroud}
@@ -59,7 +59,7 @@ export const feedScreen = ({navigation}) => {
     <TouchableOpacity 
         name={'MAPA'}
         style={Estilo.imageStyle}
-        onPress={() => navigation.navigate('Mapa')}
+        onPress={() => navigation.navigate('Map')}
     >
         <ImageBackground
             style={Estilo.imageBackgroud}
@@ -70,7 +70,7 @@ export const feedScreen = ({navigation}) => {
     <TouchableOpacity 
         name={'MAPA'}
         style={Estilo.imageStyle}
-        onPress={() => navigation.navigate('Mapa')}
+        onPress={() => navigation.navigate('Map')}
     >
         <ImageBackground
             style={Estilo.imageBackgroud}
@@ -81,7 +81,7 @@ export const feedScreen = ({navigation}) => {
     <TouchableOpacity 
         name={'MAPA'}
         style={Estilo.imageStyle}
-        onPress={() => navigation.navigate('Mapa')}
+        onPress={() => navigation.navigate('Map')}
     >
         <ImageBackground
             style={Estilo.imageBackgroud}
