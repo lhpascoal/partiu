@@ -1,100 +1,107 @@
-import React from 'react'
-import { View, TextInput } from 'react-native'
-import { IconButton } from 'react-native-paper';
+import React, {useState} from 'react'
+import { View } from 'react-native'
 import MapView, { Callout, Marker } from 'react-native-maps';
 import MapViewDirections from 'react-native-maps-directions';
 import Estilo from './estilo'
-import MapaSearchBar from './mapaSearchBar'
-
-const GetRegion = [
-  {  
-  latitude: -22.848846438589835,
-  longitude: -43.325571984356024,
-  latitudeDelta: 0.0922,
-  longitudeDelta: 0.0421
-  },
-  {  
-  latitude: -22.83130083482748, 
-  longitude: -43.316099202401126,
-  latitudeDelta: 0.0922,
-  longitudeDelta: 0.0421
-  },
-  {
-  latitude: -22.841459901711133,  
-  longitude: -43.29958671534131,
-  latitudeDelta: 0.0922,
-  longitudeDelta: 0.0421
-  },
-  {
-  latitude: -22.856297288019473, 
-  longitude: -43.3260227,
-  latitudeDelta: 0.0922,
-  longitudeDelta: 0.0421
-  }
-]
-
-const GetMaker = [
-{  
-  latitude: -22.848846438589835,
-  longitude: -43.325571984356024
-},
-{  
-  latitude: -22.83130083482748, 
-  longitude: -43.316099202401126
-},
-{  
-latitude: -22.841459901711133,  
-longitude: -43.29958671534131
-},
-{  
-latitude: -22.856297288019473, 
-longitude: -43.3260227
-},
-{  
-latitude: -22.881173851206338, 
-longitude: -43.35106582626956,
-}
-]
-
-const GetTitle = [
-  'Você está aqui',
-  'Pachecao Digital', 
-  'Olimpo',
-  'Arena pós praia',
-  'Barril 8000',
-]
-const GetDescription = [
-  '',
-  'Vista Alegre, Rio de Janeiro - RJ, 21230-351', 
-  'Av. Vicente de Carvalho, 1450 - Penha Circular, Rio de Janeiro - RJ, 21210-000',
-  'R. Bezerra de Menezes, 31 - Váz Lobo, Rio de Janeiro - RJ, 21371-121',
-  'Estrada Intendente Magalhães, 378 - Oswaldo Cruz, Rio de Janeiro - RJ, 21341-332',
-]
-const x = 0
-const GOOGLE_MAPS_APIKEY = 'AIzaSyAoiCig70cIQGSUJuxwrDj1ZnLdcd2Nvxg';
+import GooglePlacesInput from './mapaSearchBar'
 
 
-export default props => {
+const GOOGLE_MAPS_APIKEY = 'AIzaSyCJ74m-faL6ud0Rthwn0do-AmLRTkf_8x0';
+
+
+
+
+// export default class Map{
+  
+//   state = {
+//     region: null
+//   }
+  
+//   async componetDidMount() {
+//     navigator.geolocation.getCurrentPosition(
+//       ({ coords: {latitude, longetude } }) => {
+//         this.setState({
+//           region: {
+//             latitude,
+//             longetude,
+//             latitudedelta: 0.0143,
+//             longetudedelta: 0.0134,
+//           }
+//         });
+//       },
+//       () => {}, // erro
+//       {
+//         timeout: 2000,
+//         enableHighAccuracy: true,
+//         maximumAge: 1000
+//       }
+//     )
+//   }
+  
+//   render() {
+//     const { region } = this.state;
+
+//     return(
+//       <View style={[Estilo.viewContainer]}>
+//           <MapView 
+//             showsUserLocation
+//             Region={region}
+//             style={Estilo.mapView}>
+//           </MapView>
+//             <View style={Estilo.viewTextInput}>
+//               <GooglePlacesInput></GooglePlacesInput>
+//             </View>
+//         </View>
+
+//   )
+// }
+// }
+
+// componentDidMount() {
+//   navigator.geolocation.getCurrentPosition(
+//     ({coords: { latitude, longitude } }) ={
+//       setState({
+//         region: {
+//           latitude,
+//           longitude,
+//           // latitudeDelta: 0.0143,
+//           // longetudeDelta: 0.0134
+//         }
+//       });
+//     },
+//     () => {},
+//     {
+//       timeout: 2000,
+//       enableHighAccuracy: true,
+//       maximumAge: 1000
+//     }
+//   );
+// }
+
+
+export default props => {    
+  
+  // const componentDidMount = () => {
+  //   navigator.geolocation.getCurrentPosition(({ coords: {latitude, longitude} }) =>  )
+  // }
+  
+  // componentDidMount()
+
     return (
       <View style={[Estilo.viewContainer]}>
         <MapView 
-          initialRegion={GetRegion[0]}
+          showsUserLocation
+          // region={}
           style={Estilo.mapView} >
-            <MapViewDirections
+            {/* <MapViewDirections
             strokeWidth={4}
             strokeColor="orange" 
             origin={GetMaker[0]}
             destination={GetMaker[3]}
             apikey={GOOGLE_MAPS_APIKEY}
             optimizeWaypoints={true}
-            />
-          <Callout>
-            <Marker
-              coordinate={GetMaker[x]}
-              title={GetTitle[x]}             
-            />
-           </Callout>
-           <Callout>
+            /> */}
+           {/* <Callout>
            <Marker
               coordinate={GetMaker[1]}
               title={GetTitle[1]}
@@ -114,10 +121,10 @@ export default props => {
               title={GetTitle[3]}
               description={GetDescription[3]}
             />
-          </Callout>
+          </Callout> */}
           </MapView>
           <View style={Estilo.viewTextInput}>
-            <MapaSearchBar></MapaSearchBar>
+            <GooglePlacesInput></GooglePlacesInput>
           </View>
       </View>
     );

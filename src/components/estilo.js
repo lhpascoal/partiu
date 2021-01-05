@@ -36,6 +36,7 @@ const styles = StyleSheet.create({
             backgroundColor: 'black', 
             borderRadius: 30,  
             marginTop: 10, 
+            marginBottom: 10,
             width: Dimensions.get('screen').width-20, 
             justifyContent: 'center',
             alignContent: 'center',
